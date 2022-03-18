@@ -38,7 +38,7 @@ function cellCreator(){
     let casualNumber;
     for(let i = 0; i<5; i++){ 
         do{
-        casualNumber = randomNumber(1,5);
+        casualNumber = randomNumber(1,20);
         }while(casualNumbersArray.includes(casualNumber));
         casualNumbersArray.push(casualNumber);
         const cell = document.createElement('div');
@@ -94,13 +94,13 @@ const startGame = ()=>{
     console.log('funge');
     const casualNumbers =  cellCreator();
     console.log(casualNumbers);
-    setTimeout(displayNone, 4500);
+    setTimeout(displayNone, 30000);
     setTimeout(function(){
 
         numbersRemembered(casualNumbers, numbersIdentified);
         finalResults(numbersIdentified);
           
-    }, 5000);
+    }, 30500);
     
 
 }
