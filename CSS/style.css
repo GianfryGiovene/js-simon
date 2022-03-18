@@ -34,4 +34,12 @@ body {
 #d-none {
   display: none;
 }
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
 /* / Content */
