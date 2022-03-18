@@ -9,6 +9,8 @@ Dopo che sono stati inseriti i 5 numeri,
  il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 */
 
+
+
 // -----VARIABILI GLOBALI--------
 const btnStartGame = document.getElementById('start-game');
 
@@ -33,16 +35,22 @@ function cellCreator(){
 
     const numbersRow = document.getElementById('numbers');
     const casualNumbersArray =[];
-    for(let i = 0; i<5; i++){
-        const casualNumber = randomNumber(1,20);
+    let casualNumber;
+    for(let i = 0; i<5; i++){ 
+        do{
+        casualNumber = randomNumber(1,5);
+        }while(casualNumbersArray.includes(casualNumber));
+        casualNumbersArray.push(casualNumber);
         const cell = document.createElement('div');
         cell.className = 'number-'+(i+1);
         cell.innerText = casualNumber
         numbersRow.appendChild(cell);
-        casualNumbersArray.push(casualNumber);
+        
     }
     return casualNumbersArray;
 }
+
+
 
 // display none function
 const displayNone = ()=>{
@@ -56,10 +64,15 @@ const displayNone = ()=>{
 
 const numbersRemembered = (numbersArray,identifiedArray)=>{
     for(let i = 0; i<numbersArray.length; i++){
+
         const number = parseInt(prompt('Inserire numero ricordato'));
-        if(numbersArray.includes(number)){
+
+        if(identifiedArray.includes(number) && numbersArray.includes(number) ){
+            
+        }else if(numbersArray.includes(number)){
             identifiedArray.push(number);
         }
+        
     }
 }
 
@@ -71,7 +84,6 @@ const finalResults = (identified)=>{
     results.className = 'd-block'
     results.innerText = `Hai individuato ${length} numeri su 5,
     i numeri trovati sono: ${identified}`;
-    return results;
 }
 
 
@@ -90,10 +102,6 @@ const startGame = ()=>{
           
     }, 5000);
     
-    
-
-
-
 
 }
 
