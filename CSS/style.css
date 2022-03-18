@@ -1,14 +1,37 @@
 /* Generics */
-*{
-    box-sizing: border-box;
-    padding: 0px;
-    margin: 0px;
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
 }
 /* / Generics */
 
 /* Utilities */
 /* / Utilities */
 
-
 /* Content */
+body {
+  text-align: center;
+  width: 50%;
+  padding-top: 50px;
+  margin: auto;
+  border: 1px dashed red;
+}
+
+#numbers {
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  border: 1px dashed blue;
+}
+
+[class*="number"] {
+  font-size: 50px;
+  width: calc(100% / 5);
+  border: 1px dashed yellow;
+}
+
+#d-none {
+  display: none;
+}
 /* / Content */
