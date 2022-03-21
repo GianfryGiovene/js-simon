@@ -57,7 +57,7 @@ const displayNone = ()=>{
 
     const numbersRow = document.getElementById('numbers'); 
     numbersRow.id= 'd-none';
-
+    
 }
 
 // remembered user numbers function
@@ -71,8 +71,7 @@ const numbersRemembered = (numbersArray,identifiedArray)=>{
             
         }else if(numbersArray.includes(number)){
             identifiedArray.push(number);
-        }
-        
+        }  
     }
 }
 
@@ -101,8 +100,6 @@ const startGame = ()=>{
         finalResults(numbersIdentified);
           
     }, 30500);
-    
-
 }
 
 // ----- FINE FUNZIONI--------
